@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
     <!-- Fonts -->
@@ -29,14 +30,18 @@
 <body>
 
 
-    @include('partials/header')
+    @include('partials.header')
 
 
     <main>
         @yield('content')
     </main>
 
-    @include('partials/footer')
+    @include('partials.footer')
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 </body>

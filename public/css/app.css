@@ -1,0 +1,74 @@
+:root {
+    --bs-body-font-family: 'Inter', 'sans-serif';
+    --brown: hsl(35.64deg 60.18% 56.67%);
+    --brown-dark: hsl(35.64deg 60.18% 50.67%);
+    --brown-light: hsl(36deg 60% 61% / 49%);
+}
+
+
+
+.banner {
+    background: linear-gradient(42deg, rgba(0, 0, 0, 0.7), rgb(0 0 0 / 28%)), url('../images/home-banner.jpg') center/cover no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 140px 0;
+}
+
+
+.sale-badge {
+    width: 2.6rem; 
+    height: 2.6rem;
+    margin-top: -6px;
+    margin-right: -8px;
+    background-color: var(--brown) !important;
+}
+
+.btn{
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--brown)!important;
+    border-color: var(--brown);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--brown-dark)!important;
+    border-color: var(--brown-dark);
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    border: unset;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--brown-light);
+    box-shadow: unset;
+}
+
+
+a{
+    color: var(--brown-dark);
+}
+
+.form-control:focus{
+    border-color: var(--brown-dark);
+    box-shadow: unset; 
+}
+
+
+.form-check-input:checked {
+
+    background-color: var(--brown-dark);
+    border-color: var(--brown-dark);
+}
+
+.text-brown{
+    color:var(--brown-dark);
+}
+
+.bg-brown{
+    background-color:var(--brown-dark);
+}
