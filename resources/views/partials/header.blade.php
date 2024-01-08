@@ -20,11 +20,11 @@
                 <ul class="navbar-nav ms-lg-auto text-center">
 
                     <li class="nav-item me-lg-2">
-                        <a class="nav-link" href="index.php">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
 
                     <li class="nav-item me-lg-2">
-                        <a class="nav-link" href="products.php">Products</a>
+                        <a class="nav-link" href="products">Products</a>
                     </li>
 
                     <li class="nav-item dropdown me-lg-3">

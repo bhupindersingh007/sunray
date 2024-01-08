@@ -18,3 +18,6 @@ Route::get('/', function () {
     return view('home');
     
 });
+
+
+Route::view('products', 'products');
