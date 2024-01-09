@@ -4,24 +4,20 @@
 
 <section class="container my-5">
 
-
-
-
-
     <header class="row align-items-center mb-4">
         <div class="col-6">
 
             <h4 class="mb-0">All Products</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="/products.php" class="text-muted small">Reset Filters</a>
+            <a href="/products" class="text-muted small">Reset Filters</a>
         </div>
     </header>
 
     <div class="row">
         <div class="col-lg-4">
             <aside>
-                <form class="d-flex mb-3" role="search" action="#">
+                <form class="d-flex mb-3" role="search" action="/products">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                         name="search" value="">
                     <button class="btn btn-primary" type="submit">
@@ -110,16 +106,28 @@
 
             <div class="row">
 
-                @foreach(range(0, 5) as $product)
+                @if ($products->count() > 0)
+                    
+                    @foreach($products as $product)
 
-                <!-- card  -->
-                <div class="col-md-6 mb-4">
-                    @include('partials.card')
-                </div>
+                    <div class="col-md-6 mb-4">
+                        @include('partials.card')
+                    </div>
 
-                @endforeach
+                    @endforeach
+                    
+                @else
+                
+                    <p class="text-muted">No Featured Products Found</p>
+                    
+                @endif
 
             </div>
+
+            <div class="text-end">
+                {{ $products->links() }}
+            </div>
+
         </div>
 
 </section>
