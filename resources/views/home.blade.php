@@ -5,8 +5,7 @@
 @include('partials.hero')
 
 
-
-<!-- featured -->
+{{-- featured --}}
 <section class="container mb-4">
 
     <header class="row align-items-center mb-4">
@@ -18,14 +17,12 @@
         </div>
     </header>
 
-
-    @if(true)
+    @if($featuredProducts->count() > 0)
 
     <div class="row">
 
-        @foreach(range(0, 2) as $product)
+        @foreach($featuredProducts as $product)
 
-        <!-- card  -->
         <div class="col-md-6 col-lg-4 mb-4">
             @include('partials.card')
         </div>
@@ -45,7 +42,7 @@
 
 
 
-<!-- special offers -->
+{{-- special offers --}}
 <section class="container">
 
     <header class="row align-items-center mb-4">
@@ -57,13 +54,12 @@
         </div>
     </header>
 
-    @if(true)
+    @if($productsOnSale->count() > 0)
 
     <div class="row">
 
-        @foreach(range(0, 2) as $product)
+        @foreach($productsOnSale as $product)
 
-        <!-- card  -->
         <div class="col-md-6 col-lg-4 mb-4">
             @include('partials.card')
         </div>

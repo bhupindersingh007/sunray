@@ -1,39 +1,34 @@
 <article class="card border-0 position-relative">
 
-    @if(true)
+    @if($product->on_sale == true)
 
     <span class="sale-badge position-absolute top-0 end-0 badge 
         rounded-pill fw-semibold py-2 rounded-circle 
-        d-flex justify-content-center align-items-center">SALE</span>
+        d-flex justify-content-center align-items-center">
+        SALE
+    </span>
 
     @endif
 
 
     <a href="#">
-
-        <img src="https://placehold.co/400x300" class="card-img-top object-fit-contain rounded" alt="">
-
+        <img src="{{ asset('storage/'. $product->image_url) }}" 
+        class="card-img-top object-fit-contain rounded" alt="{{ $product->name  }}">
     </a>
 
     <div class="card-body px-0">
 
-        <h5 class="card-title">
-            {{ 'Classic Black Sunglasses' }}
-        </h5>
+        <h5 class="card-title">{{ $product->name }}</h5>
 
-        <p class="small text-muted mb-2">
-            {{ 'sunglasses' }}
-        </p>
+        <p class="small text-muted mb-2">{{ $product->category }}</p>
 
         <p class="card-text">
 
-            @if(true)
-            <del
-                class="small">${{ number_format(99, 2); }}</del>
+            @if($product->sale == true)
+            <del class="small">${{ number_format($product->price + $product->price * 0.25, 2); }}</del>
             @endif
 
-            <span
-                class="fw-bold">${{ '99.00' }}</span>
+            <span class="fw-bold">${{ $product->price }}</span>
         </p>
 
         <a href="#" class="btn btn-primary w-100 py-2">Add to Cart</a>
