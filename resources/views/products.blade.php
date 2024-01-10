@@ -29,7 +29,7 @@
                     </button>
                 </form>
 
-                <form action="#">
+                <form action="/products">
                     <div class="accordion mb-3" id="accordion-filters">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
