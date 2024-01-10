@@ -37,7 +37,7 @@ class ProductController extends Controller
         })
         ->simplePaginate(6);
 
-        return view('products', compact('products'));
+        return view('products.index', compact('products'));
 
     }
 }
