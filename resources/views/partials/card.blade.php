@@ -31,6 +31,11 @@
             <span class="fw-bold">${{ $product->price }}</span>
         </p>
 
-        <a href="#" class="btn btn-primary w-100 py-2">Add to Cart</a>
+        
+        <form action="{{ route('cart.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
+            <button type="submit" class="btn btn-primary w-100 py-2">Add to Cart</button>
+        </form>
     </div>
 </article>

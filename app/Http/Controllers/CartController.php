@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Product;
 
 class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index() : View
+    public function index() 
     {
-        return view('cart.index');
+
+        $cartItems = session('cart_items');
+        
+        return view('cart.index', compact('cartItems'));
+
     }
 
     /**
@@ -28,7 +33,38 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $product = Product::FindOrFail($request->product_id);
+        $quantity = $request->quantity ?? 1;
+
+        $productFound = false;
+
+        if(session()->has('cart_items')) {
+
+            foreach (session('cart_items') as &$cartItem) {
+
+                if (isset($cartItem['product_id']) && $cartItem['product_id'] == $product->id) {
+
+                    // product found in the array, so update quantity
+
+                    $cartItem['quantity'] = $cartItem['quantity'] + $quantity;
+                    $productFound = true;
+
+                    break;
+                }
+            }
+
+        }
+
+        if(!$productFound) {
+
+            $product['product_id'] = $product->id;
+            $product['quantity'] = $quantity;
+
+            // product not found in the cart, so add it
+            session()->push('cart_items', $product);
+
+        }
     }
 
     /**
