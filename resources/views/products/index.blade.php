@@ -10,7 +10,7 @@
             <h4 class="mb-0">All Products</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="{{ route('products') }}" class="text-muted small">Reset Filters</a>
+            <a href="{{ route('products.index') }}" class="text-muted small">Reset Filters</a>
         </div>
     </header>
 

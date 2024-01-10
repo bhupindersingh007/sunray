@@ -1,5 +1,5 @@
 <aside>
-    <form class="d-flex mb-3" role="search" action="{{ route('products') }}">
+    <form class="d-flex mb-3" role="search" action="{{ route('products.index') }}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
             name="search" value="{{ request('search') }}">
         <button class="btn btn-primary" type="submit">
@@ -11,7 +11,7 @@
         </button>
     </form>
 
-    <form action="{{ route('products') }}">
+    <form action="{{ route('products.index') }}">
         <div class="accordion mb-3" id="accordion-filters">
             <div class="accordion-item">
                 <h2 class="accordion-header">

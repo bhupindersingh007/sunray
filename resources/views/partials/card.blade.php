@@ -11,7 +11,7 @@
     @endif
 
 
-    <a href="#">
+    <a href="{{ route('products.show', ['product' => $product]) }}">
         <img src="{{ asset('storage/'. $product->image_url) }}" 
         class="card-img-top object-fit-contain rounded" alt="{{ $product->name  }}">
     </a>
