@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 
-Route::get('products', ProductController::class);
+Route::get('products', ProductController::class)->name('products');

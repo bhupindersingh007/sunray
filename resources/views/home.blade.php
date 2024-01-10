@@ -13,7 +13,7 @@
             <h4 class="mb-0">Featured Products</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="products.php?type=featured" class="text-muted small">See More</a>
+            <a href="{{ route('products') }}?type=featured" class="text-muted small">See More</a>
         </div>
     </header>
 
@@ -50,7 +50,7 @@
             <h4 class="mb-0">Special Offers</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="products.php?type=sale" class="text-muted small">See More</a>
+            <a href="{{ route('products') }}?type=sale" class="text-muted small">See More</a>
         </div>
     </header>
 

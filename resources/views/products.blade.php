@@ -10,14 +10,14 @@
             <h4 class="mb-0">All Products</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="/products" class="text-muted small">Reset Filters</a>
+            <a href="{{ route('products') }}" class="text-muted small">Reset Filters</a>
         </div>
     </header>
 
     <div class="row">
         <div class="col-lg-4">
             <aside>
-                <form class="d-flex mb-3" role="search" action="/products">
+                <form class="d-flex mb-3" role="search" action="{{ route('products') }}">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                         name="search" value="">
                     <button class="btn btn-primary" type="submit">
@@ -29,7 +29,7 @@
                     </button>
                 </form>
 
-                <form action="/products">
+                <form action="{{ route('products') }}">
                     <div class="accordion mb-3" id="accordion-filters">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
