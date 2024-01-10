@@ -14,9 +14,20 @@ class CartController extends Controller
     public function index() 
     {
 
+        $subTotal = 0;
+
         $cartItems = session('cart_items');
+
+        if(session()->has('cart_items')){
+
+            foreach ($cartItems as $key => $cartItem) {
+
+                $subTotal += $cartItem->price * $cartItem->quantity;
+                
+            }
+        }
         
-        return view('cart.index', compact('cartItems'));
+        return view('cart.index', compact('cartItems', 'subTotal'));
 
     }
 

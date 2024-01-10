@@ -54,6 +54,34 @@
         </tbody>
     </table>
 
+     <!-- cart totals -->
+     <div class="row justify-content-end">
+        <div class="col-md-6">
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <h4 class="mb-0">Cart Totals</h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="fw-bold">
+                    <tr>
+                        <td>Sub Total</td>
+                        <td>${{ $subTotal }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tax (5%)</td>
+                        <td>${{ number_format($subTotal * 0.05, 2) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>${{ number_format($subTotal + ($subTotal * 0.05), 2) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
    
     
     @endif
