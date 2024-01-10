@@ -33,15 +33,13 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu border-0 shadow-sm">
-                            <li><a class="dropdown-item small" href="products.php?category=eyeglasses">Eye
-                                    Glasses</a></li>
-                            <li><a class="dropdown-item small" href="products.php?category=sunglasses">Sun
-                                    Glasses</a></li>
+                            <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=eyeglasses">Eye Glasses</a></li>
+                            <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=sunglasses">Sun Glasses</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item me-lg-3">
-                        <a href="products.php" class="mt-3 mt-lg-1 d-inline-block text-muted">
+                        <a href="{{ route('products.index') }}" class="mt-3 mt-lg-1 d-inline-block text-muted">
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
                             class="text-brown"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -65,8 +63,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                             <?php if(isset($_SESSION['user'])): ?>
-                            <li><a class="dropdown-item small"
-                                    href="#"><?php echo htmlentities($_SESSION['user']['name']); ?></a>
+                            <li><a class="dropdown-item small" href="#"><?php echo htmlentities($_SESSION['user']['name']); ?></a>
                             </li>
                             <li><a class="dropdown-item small" href="logout.php?action=logout">Logout</a></li>
                             <?php else: ?>
