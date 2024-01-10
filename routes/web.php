@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 
 
-Route::get('products', ProductController::class)->name('products');
+Route::resource('products', ProductController::class)->only(['index', 'show']);

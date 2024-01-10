@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * Display a listing of the resource.
      */
-    public function __invoke(Request $request) : View
+    public function index(Request $request) : View
     {
 
         $products = Product::when($request->search, function($query, $search){
@@ -39,5 +39,16 @@ class ProductController extends Controller
 
         return view('products.index', compact('products'));
 
+
     }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Product $product)
+    {
+        //
+    }
+
+    
 }
