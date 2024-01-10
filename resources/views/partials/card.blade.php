@@ -24,7 +24,7 @@
 
         <p class="card-text">
 
-            @if($product->sale == true)
+            @if($product->on_sale == true)
             <del class="small">${{ number_format($product->price + $product->price * 0.25, 2); }}</del>
             @endif
 

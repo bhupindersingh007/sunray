@@ -10,7 +10,7 @@
             <img src="{{ asset('storage/'. $product->image_url) }}" 
             class="img-fluid rounded mb-4 mb-lg-5" alt="{{ $product->name }}">
 
-            @if($product['on_sale'] == true)
+            @if($product->on_sale == true)
 
             <span class="sale-badge position-absolute top-0 end-0 badge 
                 rounded-pill fw-semibold py-2 rounded-circle 
