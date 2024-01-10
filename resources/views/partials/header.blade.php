@@ -78,7 +78,7 @@
 
 
                     <li class="nav-item">
-                        <a href="cart.php" class="mt-3 mt-lg-1 d-inline-block text-muted position-relative">
+                        <a href="{{ route('cart.index') }}" class="mt-3 mt-lg-1 d-inline-block text-muted position-relative">
 
                             <span
                                 class="position-absolute start-100 translate-middle badge rounded-pill bg-brown text-white fw-semibold"

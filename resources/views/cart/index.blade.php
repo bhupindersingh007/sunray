@@ -9,8 +9,12 @@
             <h4 class="mb-0">Shopping Cart</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            @if(isset($cartItems) && count($cartItems) > 0)
-            <a href="cart.php?action=empty_cart" class="text-muted small">Empty Cart</a>
+            @if(isset($cartItems) && count($cartItems) > 0)        
+                <form action="{{ route('cart.destroy', ['cart' => 'empty']) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="text-muted small btn btn-sm">Empty Cart</a>
+                </form>
             @endif
         </div>
     </header>
