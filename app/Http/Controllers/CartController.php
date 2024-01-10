@@ -76,6 +76,9 @@ class CartController extends Controller
             session()->push('cart_items', $product);
 
         }
+
+        return redirect()->back();
+
     }
 
     /**
