@@ -49,7 +49,11 @@
                 <td>${{ $cartItem->price }}</td>
                 <td>${{ $cartItem->price * $cartItem->quantity }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">&times;</a>
+                    <form action="{{ route('cart.update', ['cart' => $cartItem->id]) }}" method="post">
+                        @csrf
+                        @method('PUT') 
+                       <button type="submit" class="btn btn-primary">&times;</button>
+                    </form>
                 </td>
             </tr>
 

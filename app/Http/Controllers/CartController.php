@@ -102,7 +102,19 @@ class CartController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        foreach (session('cart_items') as $key => $cartItem) {
+
+            if (isset($cartItem['product_id']) && $cartItem['product_id'] == $id) {
+                
+                // remove the item from the cart
+                session()->forget("cart_items.$key");
+                    
+            }
+        }
+
+        return redirect()->route('cart.index');
+    
     }
 
     /**
