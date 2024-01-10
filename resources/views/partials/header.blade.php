@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <a class="navbar-brand p-0 d-flex align-items-center" href="/">
 
-                <img src="images/logo.png" alt="Sun Ray" style="width:38px">
+                <img src="{{ asset('images/logo.png') }}" alt="Sun Ray" style="width:38px">
 
                 <span class="fw-bold fs-4 ms-2" style="letter-spacing: 0.10rem;">
                     <span class="text-brown">SUN</span>RAY
