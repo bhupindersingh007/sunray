@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -27,7 +28,16 @@ class RegisterController extends Controller
             'password' => 'required|min:5|max:25|confirmed',
         ]);
 
-        // login register comes here
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        auth()->login($user);
+        
+        $request->session()->regenerate();
+        return redirect()->intended();
 
     }
 
