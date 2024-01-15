@@ -14,7 +14,10 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        
+        return auth()->check() 
+            ? redirect()->route('home') 
+            : view('auth.register');
     }
 
     /**
