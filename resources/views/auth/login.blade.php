@@ -30,7 +30,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary mb-2">Register</button>
+                <button type="submit" class="btn btn-primary mb-2">Login</button>
             </form>
 
             <p class="mt-3 text-muted">Don't have an account? <a href="{{ route('register.create') }}">Register</a></p>
