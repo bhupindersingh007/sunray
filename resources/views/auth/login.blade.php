@@ -15,7 +15,7 @@
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                     @error('email')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -23,12 +23,11 @@
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}">
                     @error('password')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
-
 
                 <button type="submit" class="btn btn-primary mb-2">Login</button>
             </form>
