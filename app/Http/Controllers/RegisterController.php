@@ -21,7 +21,14 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:50',
+            'email' => 'required|email|max:50',
+            'password' => 'required|min:5|max:25|confirmed',
+        ]);
+
+        // login register comes here
+
     }
 
     
