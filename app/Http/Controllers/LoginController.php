@@ -21,13 +21,20 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $credentials = $request->validate([
             'email' => 'email|required',
             'password' => 'required'
         ]);
 
-        // login logic comes here
+        if (auth()->attempt($credentials)) {
 
+            $request->session()->regenerate();
+            return redirect()->intended();
+        }
+ 
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput(['name', 'email']);
 
     }
 
