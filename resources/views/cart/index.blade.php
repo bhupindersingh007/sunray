@@ -90,6 +90,27 @@
             </table>
         </div>
     </div>
+
+    <div class="d-flex justify-content-end mb-4">
+       
+        @auth
+        <a href="/checkout" class="btn btn-primary px-3 py-2">Checkout</a>
+        @endauth
+
+        @guest
+        <p class="text-muted">
+            Please
+            <a href="{{ route('register.create') }}">Register</a> / <a href="{{ route('login.create') }}">Login</a>
+            to Complete Checkout.
+        </p>
+        @endguest
+
+    </div>
+
+
+    @else
+
+    <p class="text-muted">Cart is empty</p>
    
     
     @endif
