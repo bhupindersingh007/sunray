@@ -62,7 +62,8 @@
                             </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
-                            @if(auth()->user())
+                            
+                            @auth
                                 <li><a class="dropdown-item small" href="#">{{ auth()->user()->name }}</a></li>
                                 <li>
                                     <form class="dropdown-item small" action="{{ route('logout') }}" method="POST">
@@ -70,10 +71,12 @@
                                     <button type="submit" class="dropdown-item p-0">Logout</button>
                                 </form>
                             </li>
-                            @else
+                            @endauth
+
+                            @guest
                                 <li><a class="dropdown-item small" href="{{ route('register.create') }}">Regsiter</a></li>
                                 <li><a class="dropdown-item small" href="{{ route('login.create') }}">Login</a></li>
-                            @endif
+                            @endguest
                         </ul>
                     </li>
 
