@@ -62,14 +62,14 @@
                             </svg>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
-                            <?php if(isset($_SESSION['user'])): ?>
-                            <li><a class="dropdown-item small" href="#"><?php echo htmlentities($_SESSION['user']['name']); ?></a>
+                            @if(auth()->user())
+                            <li><a class="dropdown-item small" href="#">{{ auth()->user()->name }}</a>
                             </li>
                             <li><a class="dropdown-item small" href="#">Logout</a></li>
-                            <?php else: ?>
+                            @else
                             <li><a class="dropdown-item small" href="{{ route('register.create') }}">Regsiter</a></li>
                             <li><a class="dropdown-item small" href="{{ route('login.create') }}">Login</a></li>
-                            <?php endif; ?>
+                            @endif
                         </ul>
                     </li>
 
