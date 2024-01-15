@@ -65,10 +65,10 @@
                             <?php if(isset($_SESSION['user'])): ?>
                             <li><a class="dropdown-item small" href="#"><?php echo htmlentities($_SESSION['user']['name']); ?></a>
                             </li>
-                            <li><a class="dropdown-item small" href="logout.php?action=logout">Logout</a></li>
+                            <li><a class="dropdown-item small" href="#">Logout</a></li>
                             <?php else: ?>
-                            <li><a class="dropdown-item small" href="register.php">Regsiter</a></li>
-                            <li><a class="dropdown-item small" href="login.php">Login</a></li>
+                            <li><a class="dropdown-item small" href="{{ route('register.create') }}">Regsiter</a></li>
+                            <li><a class="dropdown-item small" href="{{ route('login.create') }}">Login</a></li>
                             <?php endif; ?>
                         </ul>
                     </li>

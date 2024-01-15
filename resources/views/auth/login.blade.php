@@ -2,6 +2,43 @@
 
 @section('content')
 
-<h1>Login</h1>
+<div class="container mt-5 pb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h4>Login</h4>
+            <hr>
+
+            <form action="{{ route('login.store') }}" method="POST">
+
+                @csrf
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                    @error('email')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                    @error('password')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mb-2">Register</button>
+            </form>
+
+            <p class="mt-3 text-muted">Don't have an account? <a href="{{ route('register.create') }}">Register</a></p>
+        
+        </div>
+    </div>
+</div>
+
+
 
 @endsection
