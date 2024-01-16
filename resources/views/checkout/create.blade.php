@@ -13,18 +13,20 @@
 
                 <h5 class="mt-4">Customer Information</h5>
                 <hr>
-            
+                
+                @csrf
+
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label" for="first_name" class="text-black">First Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control mb-3" id="first_name" name="first_name" value="{{ old('first_name') }}">
+                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name') }}">
                         @error('first_name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label" for="last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control mb-3" id="last_name" name="last_name" value="{{ old('last_name') }}">
+                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name') }}">
                         @error('last_name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -32,16 +34,16 @@
                 </div>
             
                 <div class="form-group row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label" for="email" class="text-black">Email Address <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control mb-3" id="email" name="email" value="{{ old('email') }}">
+                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
                         @error('email')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label" for="phone_number" class="text-black">Phone No.<span class="text-danger">*</span></label>
-                        <input type="tel" class="form-control mb-3" id="phone_number" name="phone_number" value="{{ old('phone_number') }}">
+                        <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ old('phone_number') }}">
                         @error('phone_number')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -49,17 +51,17 @@
                 </div>
             
                 <div class="form-group row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                         <label class="form-label" for="address" class="text-black">Address<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control mb-3" id="address" name="address" placeholder="Street address" value="{{ old('address') }}">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Street address" value="{{ old('address') }}">
                         @error('address')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
             
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                         <label class="form-label" for="postal" class="text-black">Postal <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control mb-3" id="postal" name="postal" value="{{ old('postal') }}">
+                        <input type="text" class="form-control" id="postal" name="postal" value="{{ old('postal') }}">
                         @error('postal')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -68,7 +70,8 @@
             
                 <div class="form-group">
                     <label class="form-label" for="order_notes" class="text-black">Order Notes</label>
-                    <textarea name="order_notes" id="order_notes" cols="30" rows="3" class="form-control mb-3" placeholder="Write your notes here...">{{ old('order_notes') }}</textarea>
+                    <textarea name="order_notes" id="order_notes" cols="30" rows="3" class="form-control"
+                     placeholder="Write your notes here...">{{ old('order_notes') }}</textarea>
                     @error('order_notes')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
