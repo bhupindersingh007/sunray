@@ -11,6 +11,11 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request) 
     {
+
+        if(!$request->isMethod('POST')){
+
+            return redirect()->route('home');
+        }
         
         auth()->logout();
  
