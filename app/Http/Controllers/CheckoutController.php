@@ -12,7 +12,21 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        return view('checkout.create');
+        
+        $subTotal = 0;
+
+        $cartItems = session('cart_items');
+
+        if(session()->has('cart_items')){
+
+            foreach ($cartItems as $key => $cartItem) {
+
+                $subTotal += $cartItem->price * $cartItem->quantity;
+                
+            }
+        }
+
+        return view('checkout.create', compact('subTotal'));
     }
 
     /**
