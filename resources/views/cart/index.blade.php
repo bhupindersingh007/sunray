@@ -94,7 +94,7 @@
     <div class="d-flex justify-content-end mb-4">
        
         @auth
-        <a href="/checkout" class="btn btn-primary px-3 py-2">Checkout</a>
+        <a href="{{ route('checkout.create') }}" class="btn btn-primary px-3 py-2">Checkout</a>
         @endauth
 
         @guest

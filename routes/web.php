@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,5 @@ Route::get('login', [LoginController::class, 'create'])->name('login.create');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')->middleware('auth');
+
+Route::resource('checkout', CheckoutController::class)->only(['create', 'store'])->middleware('auth');
