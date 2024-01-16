@@ -23,6 +23,7 @@
 
 
     @include('partials.header')
+    @include('partials.alerts')
 
 
     <main>

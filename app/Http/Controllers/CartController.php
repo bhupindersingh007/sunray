@@ -77,7 +77,7 @@ class CartController extends Controller
 
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('cart', 'Cart Updated.');
 
     }
 
@@ -113,7 +113,7 @@ class CartController extends Controller
             }
         }
 
-        return redirect()->route('cart.index');
+        return redirect()->route('cart.index')->with('cart', 'Cart Updated.');
     
     }
 
@@ -124,6 +124,6 @@ class CartController extends Controller
     {
         session()->forget('cart_items');
 
-        return redirect()->route('cart.index');
+        return redirect()->route('cart.index')->with('cart', 'Cart Updated.');
     }
 }
