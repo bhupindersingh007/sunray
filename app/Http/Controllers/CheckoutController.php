@@ -49,6 +49,7 @@ class CheckoutController extends Controller
 
         // checkout logic 
 
+        return redirect()->route('order.confirmation');
 
     }
 

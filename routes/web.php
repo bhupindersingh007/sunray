@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ConfirmationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,3 +39,5 @@ Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')
 
 Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('auth');
 Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth');
+
+Route::get('confirmation', ConfirmationController::class)->name('confirmation')->middleware('auth');
