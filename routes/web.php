@@ -36,4 +36,5 @@ Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')->middleware('auth');
 
-Route::resource('checkout', CheckoutController::class)->only(['create', 'store'])->middleware('auth');
+Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('auth');
+Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth');
