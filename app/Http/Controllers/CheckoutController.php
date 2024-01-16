@@ -12,7 +12,7 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        //
+        return view('checkout.create');
     }
 
     /**
