@@ -33,4 +33,4 @@ Route::post('register', [RegisterController::class, 'store'])->name('register.st
 Route::get('login', [LoginController::class, 'create'])->name('login.create');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
-Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout');
+Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')->middleware('auth');
