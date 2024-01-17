@@ -1,7 +1,7 @@
 @if(session('cart'))
 
-<article class="alert bg-white shadow-sm fade show d-flex align-items-center justify-content-between
-    position-fixed bottom-0 end-0 z-3 m-3 col-4" id="success">
+<div class="position-fixed bottom-0 end-0 z-3 col-12 col-md-4">
+<article class="alert bg-white shadow-sm fade show d-flex align-items-center justify-content-between mx-3" id="success">
     <div class="d-flex align-items-center">
         <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" class="text-brown"
             fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -15,5 +15,6 @@
     </div>
     <button class="btn btn-close" data-bs-dismiss="alert"></button>
 </article>
+</div>
 
 @endif
