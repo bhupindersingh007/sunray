@@ -101,7 +101,7 @@ class CheckoutController extends Controller
         session()->forget('cart_items');
 
 
-        return redirect()->route('order.confirmation');
+        return redirect()->route('confirmation');
 
     }
 
