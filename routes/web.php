@@ -9,6 +9,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ConfirmationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\IsCartEmpty;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
 Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')->middleware('auth');
 
-Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('auth');
-Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth');
+Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('auth', IsCartEmpty::class);
+Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth', IsCartEmpty::class);
 
-Route::get('confirmation', ConfirmationController::class)->name('confirmation')->middleware('auth');
+Route::get('confirmation', ConfirmationController::class)->name('confirmation')->middleware('auth', IsCartEmpty::class);

@@ -17,11 +17,6 @@ class CheckoutController extends Controller
     public function create()
     {
 
-        if (session()->has('cart_items') == null || session('cart_items') == []) {
-
-            return redirect()->route('home');
-
-        }
 
         $subTotal = 0;
 
