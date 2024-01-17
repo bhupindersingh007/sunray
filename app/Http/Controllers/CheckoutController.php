@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderItem;
+use Illuminate\Support\Facades\DB;
+
 
 class CheckoutController extends Controller
 {
@@ -49,7 +51,6 @@ class CheckoutController extends Controller
             'cvv' => 'required|numeric',
         ]);
 
-
         $subTotal = 0;
 
         $cartItems = session('cart_items');
@@ -66,36 +67,40 @@ class CheckoutController extends Controller
         $tax = $subTotal * 0.05;
 
 
-
-        // store order 
-
-        $order = Order::create([
-            'order_number' => Order::orderNumber(),
-            'user_id' => auth()->id(),
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'address' => $request->address,
-            'postal' => $request->postal,
-            'order_notes' => $request->order_notes,
-            'subtotal' => $subTotal,
-            'tax' => $tax,
-            'total' => $subTotal + $tax
-        ]);
+        DB::transaction(function() use($subTotal, $tax, $request, $cartItems){
 
 
-        // store order items
-        foreach (session('cart_items') as $cartItem) {
-            
-            OrderItem::create([
-              'order_id' => $order->id,
-              'product_id' => $cartItem->product_id,
-              'quantity' => $cartItem->quantity,
-              'price' => $cartItem->price
+            $order = Order::create([
+                'order_number' => Order::orderNumber(),
+                'user_id' => auth()->id(),
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'phone_number' => $request->phone_number,
+                'address' => $request->address,
+                'postal' => $request->postal,
+                'order_notes' => $request->order_notes,
+                'subtotal' => $subTotal,
+                'tax' => $tax,
+                'total' => $subTotal + $tax
             ]);
 
-        }
+            foreach ($cartItems as $cartItem) {
+                
+                OrderItem::create([
+                'order_id' => $order->id,
+                'product_id' => $cartItem->product_id,
+                'quantity' => $cartItem->quantity,
+                'price' => $cartItem->price
+                ]);
+
+            }
+
+        });
+
+
+
+
 
         // reset cart
         session()->forget('cart_items');
