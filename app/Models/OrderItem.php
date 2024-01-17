@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Order extends Model
+class OrderItem extends Model
 {
     use HasFactory;
 
-
+    
     /**
      * The attributes that aren't mass assignable.
      *
@@ -20,11 +19,10 @@ class Order extends Model
 
 
     /**
-     * Get the items for the order.
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
      */
-    public function orderItems(): HasMany
-    {
-        return $this->hasMany(OrderItem::class);
-    }
+    public $timestamps = false;
 
 }
