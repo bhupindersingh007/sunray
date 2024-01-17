@@ -36,7 +36,7 @@
                 <div class="form-group row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label" for="email" class="text-black">Email Address <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email', auth()->user()->email) }}">
                         @error('email')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
