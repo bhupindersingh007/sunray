@@ -70,7 +70,7 @@ class CheckoutController extends Controller
         // store order 
 
         $order = Order::create([
-            'order_number' => '10001',
+            'order_number' => Order::orderNumber(),
             'user_id' => auth()->id(),
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,

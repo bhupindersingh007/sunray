@@ -27,4 +27,15 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+
+    /**
+     * Get the order number
+     */
+    public static function orderNumber() : int
+    {
+
+        return self::doesntExist() ? 10001 : self::max('order_number') + 1;
+
+    }
+
 }
