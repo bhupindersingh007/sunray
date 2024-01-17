@@ -12,6 +12,14 @@ class ConfirmationController extends Controller
     public function __invoke(Request $request) 
     {
 
+        if (session()->has('cart_items') == null || session('cart_items') == []) {
+
+            return redirect()->route('home');
+
+        }
+        
+        session()->forget('cart_items');
+
         return view('confirmation.show');
 
     }

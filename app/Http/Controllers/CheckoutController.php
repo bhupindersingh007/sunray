@@ -105,10 +105,6 @@ class CheckoutController extends Controller
         });
 
 
-        // reset cart
-        session()->forget('cart_items');
-
-
         return redirect()->route('confirmation');
 
     }
