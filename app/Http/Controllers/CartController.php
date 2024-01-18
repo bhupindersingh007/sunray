@@ -5,27 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Product;
+use App\Services\CartService;
 
 class CartController extends Controller
 {
+
+    private CartService $cartService;
+
+
+    public function __construct(CartService $cartService)
+    {
+        $this->cartService = $cartService;
+        
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index() 
     {
 
-        $subTotal = 0;
 
-        $cartItems = session('cart_items');
 
-        if(session()->has('cart_items')){
+        $cartItems = $this->cartService->getCartItems();
 
-            foreach ($cartItems as $key => $cartItem) {
-
-                $subTotal += $cartItem->price * $cartItem->quantity;
-                
-            }
-        }
+        $subTotal = $this->cartService->getCartSubTotal();
         
         return view('cart.index', compact('cartItems', 'subTotal'));
 
@@ -48,34 +52,7 @@ class CartController extends Controller
         $product = Product::FindOrFail($request->product_id);
         $quantity = $request->quantity ?? 1;
 
-        $productFound = false;
-
-        if(session()->has('cart_items')) {
-
-            foreach (session('cart_items') as &$cartItem) {
-
-                if (isset($cartItem['product_id']) && $cartItem['product_id'] == $product->id) {
-
-                    // product found in the array, so update quantity
-
-                    $cartItem['quantity'] = $cartItem['quantity'] + $quantity;
-                    $productFound = true;
-
-                    break;
-                }
-            }
-
-        }
-
-        if(!$productFound) {
-
-            $product['product_id'] = $product->id;
-            $product['quantity'] = $quantity;
-
-            // product not found in the cart, so add it
-            session()->push('cart_items', $product);
-
-        }
+        $this->cartService->addCartItem($product, $quantity);
 
         return redirect()->back()->with('cart', 'Cart Updated.');
 
@@ -100,19 +77,11 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, int $id)
     {
         
-        foreach (session('cart_items') as $key => $cartItem) {
-
-            if (isset($cartItem['product_id']) && $cartItem['product_id'] == $id) {
-                
-                // remove the item from the cart
-                session()->forget("cart_items.$key");
-                    
-            }
-        }
-
+        $this->cartService->removeCartItem($id);
+        
         return redirect()->route('cart.index')->with('cart', 'Cart Updated.');
     
     }
@@ -122,7 +91,8 @@ class CartController extends Controller
      */
     public function destroy()
     {
-        session()->forget('cart_items');
+
+        $this->cartService->emptyCart();
 
         return redirect()->route('cart.index')->with('cart', 'Cart Updated.');
     }
