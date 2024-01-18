@@ -49,39 +49,15 @@ class CheckoutController extends Controller
             'expiry_date' => 'required|string|max:5',
             'cvv' => 'required|numeric',
         ]);
+        
+        
+        DB::transaction(function() use($request){
+    
+            $cartItems = $this->cartService->getCartItems();
+            $subTotal = $this->cartService->getCartSubTotal();
+            $tax = $subTotal * 0.05;
 
-        $cartItems = $this->cartService->getCartItems();
-        $subTotal = $this->cartService->getCartSubTotal();
-        $tax = $subTotal * 0.05;
-
-        DB::transaction(function() use($subTotal, $tax, $request, $cartItems){
-
-
-            $order = Order::create([
-                'order_number' => Order::orderNumber(),
-                'user_id' => auth()->id(),
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'phone_number' => $request->phone_number,
-                'address' => $request->address,
-                'postal' => $request->postal,
-                'order_notes' => $request->order_notes,
-                'subtotal' => $subTotal,
-                'tax' => $tax,
-                'total' => $subTotal + $tax
-            ]);
-
-            foreach ($cartItems as $cartItem) {
-                
-                OrderItem::create([
-                'order_id' => $order->id,
-                'product_id' => $cartItem->product_id,
-                'quantity' => $cartItem->quantity,
-                'price' => $cartItem->price
-                ]);
-
-            }
+            Order::createOrder($request, $subTotal, $tax, $cartItems);
 
         });
 
