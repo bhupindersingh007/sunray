@@ -6,10 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use App\Services\CartService;
 
 
 class CheckoutController extends Controller
 {
+
+    private CartService $cartService;
+
+
+    public function __construct(CartService $cartService)
+    {
+        $this->cartService = $cartService;
+        
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -17,19 +27,7 @@ class CheckoutController extends Controller
     public function create()
     {
 
-
-        $subTotal = 0;
-
-        $cartItems = session('cart_items');
-
-        if(session()->has('cart_items')){
-
-            foreach ($cartItems as $key => $cartItem) {
-
-                $subTotal += $cartItem->price * $cartItem->quantity;
-                
-            }
-        }
+        $subTotal = $this->cartService->getCartSubTotal();
 
         return view('checkout.create', compact('subTotal'));
     }
@@ -52,21 +50,9 @@ class CheckoutController extends Controller
             'cvv' => 'required|numeric',
         ]);
 
-        $subTotal = 0;
-
-        $cartItems = session('cart_items');
-
-        if(session()->has('cart_items')){
-
-            foreach ($cartItems as $key => $cartItem) {
-
-                $subTotal += $cartItem->price * $cartItem->quantity;
-                
-            }
-        }
-
+        $cartItems = $this->cartService->getCartItems();
+        $subTotal = $this->cartService->getCartSubTotal();
         $tax = $subTotal * 0.05;
-
 
         DB::transaction(function() use($subTotal, $tax, $request, $cartItems){
 
