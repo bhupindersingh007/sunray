@@ -89,5 +89,25 @@ class CartService {
 
     }
 
+    public function getCartItemsCount() : int
+    {
+        
+        $totalQuantity = 0;
+
+        if(session()->has('cart_items')){
+
+            foreach (session('cart_items') as $key => $cartItem) {
+
+                $totalQuantity += $cartItem->quantity;
+                
+            }
+
+        }
+
+        return $totalQuantity;
+
+    }
+
+
 
 }

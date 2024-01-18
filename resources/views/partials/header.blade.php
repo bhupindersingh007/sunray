@@ -88,7 +88,7 @@
                                 class="position-absolute start-100 translate-middle badge rounded-pill bg-brown text-white fw-semibold"
                                 style="top: 2px;">
                                 
-                                0
+                                {{ (new App\Services\CartService())->getCartItemsCount() }}
 
                             </span>
 
