@@ -110,7 +110,9 @@
 
     @else
 
-    <p class="text-muted">Cart is empty</p>
+    <p class="text-muted">
+        Cart is empty <a href="{{ route('products.index') }}">Back to Shop</a> 
+    </p>
    
     
     @endif
