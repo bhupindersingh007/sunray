@@ -40,7 +40,14 @@
                             <td>{{ $order->address }}</td>
                             <td>${{ $order->total }}</td>
                             <td>
-                                <button class="btn btn-sm btn-primary">Products</button>
+                                <button class="btn btn-sm btn-primary" 
+                                type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#order-{{ $order->id }}">
+                                Products
+                               </button>
+
+                               @include('partials.modal')
+                                
+                    
                             </td>
                         </tr>
 
@@ -48,6 +55,12 @@
 
                     </tbody>
                 </table>
+            </div>
+
+
+            
+            <div class="text-end">
+                {{ $orders->links() }}
             </div>
 
 

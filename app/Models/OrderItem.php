@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OrderItem extends Model
 {
@@ -24,5 +25,17 @@ class OrderItem extends Model
      * @var bool
      */
     public $timestamps = false;
+    
+    
+    /**
+     * Get the items for the order.
+     */
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class)->select(['id', 'name', 'slug', 'image_url']);
+    }
+
+
+
 
 }

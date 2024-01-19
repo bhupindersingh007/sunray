@@ -14,7 +14,7 @@ class OrderController extends Controller
     public function __invoke(Request $request) 
     {
      
-        $orders = Order::with('orderItems')->simplePaginate();
+        $orders = Order::with('orderItems.product')->simplePaginate();
 
         return view('orders.index', compact('orders'));
 
