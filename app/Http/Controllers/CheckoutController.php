@@ -46,9 +46,11 @@ class CheckoutController extends Controller
             'postal' => 'required|size:6',
             'order_notes' => 'nullable|string|max:150',
             'card_number' => 'required|digits:16',
-            'expiry_date' => 'required|size:5',
+            'expiry_date' => [' required', 'size:5', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],
             'cvv' => 'required|digits:3',
         ]);
+
+        if(explode('/', $request->expiry_date)[0])
         
         
         DB::transaction(function() use($request){
