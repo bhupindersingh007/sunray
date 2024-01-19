@@ -4,13 +4,13 @@
 <div class="container mt-5 pb-5">
 
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
 
             @include('partials.sidebar')
 
         </div>
 
-        <div class="col-lg-8">
+        <div class="col-lg-9">
 
             <h4 class="mb-3">My Orders</h4>
 
@@ -22,8 +22,8 @@
                     <thead class="small">
                         <tr>
                             <th>Order No.</th>
+                            <th>Order Date</th>
                             <th>Buyer Name</th>
-                            <th>Phone No.</th>
                             <th>Address</th>
                             <th>Total</th>
                             <th></th>
@@ -35,9 +35,9 @@
                          
                         <tr>
                             <td>{{ $order->order_number }}</td>
+                            <td>{{ $order->created_at->format('D j, Y') }}</td>
                             <td>{{ $order->first_name . ' ' . $order->last_name }}</td>
-                            <td>{{ $order->phone_number }}</td>
-                            <td>{{ $order->address }}</td>
+                            <td>{{ $order->address . ', ' . $order->postal  }}</td>
                             <td>${{ $order->total }}</td>
                             <td>
                                 <button class="btn btn-sm btn-primary" 
