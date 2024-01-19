@@ -9,6 +9,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsCartEmpty;
 
@@ -45,3 +46,6 @@ Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.st
 Route::get('confirmation', ConfirmationController::class)->name('confirmation')->middleware('auth', IsCartEmpty::class);
 
 Route::get('account', AccountController::class)->name('account.show')->middleware('auth');
+
+Route::get('orders', OrderController::class)->name('orders.index')->middleware('auth');
+
