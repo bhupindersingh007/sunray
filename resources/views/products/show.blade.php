@@ -44,7 +44,7 @@
                     <input type="number" class="form-control" name="quantity" value="1" min="1" required>
                 </div>
 
-                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <input type="hidden" name="product_slug" value="{{ $product->slug }}">
 
                 <button class="btn btn-primary py-2 mb-5">Add to Cart</button>
             </form>
