@@ -11,6 +11,15 @@ class Product extends Model
     use HasFactory;
 
     /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
+    
+    /**
      * Scope a query to filter products
      */
     public function scopeFilter(Builder $query, $search = null , $category = null, $type = null): void

@@ -48,8 +48,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $product = Product::FindOrFail($request->product_id);
+
+        $product = Product::where('slug', $request->product_slug)->FirstOrFail();
         $quantity = $request->quantity ?? 1;
 
         $this->cartService->addCartItem($product, $quantity);
