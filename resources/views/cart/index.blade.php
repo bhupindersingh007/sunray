@@ -9,61 +9,63 @@
             <h4 class="mb-0">Shopping Cart</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            @if(isset($cartItems) && count($cartItems) > 0)        
-                <form action="{{ route('cart.destroy', ['cart' => 'empty']) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="text-muted small btn btn-sm">Empty Cart</a>
-                </form>
+            @if(isset($cartItems) && count($cartItems) > 0)
+            <form action="{{ route('cart.destroy', ['cart' => 'empty']) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="text-muted small btn btn-sm">Empty Cart</a>
+            </form>
             @endif
         </div>
     </header>
 
     @if(isset($cartItems) && count($cartItems) > 0)
 
-    <table class="table table-bordered">
-        <thead class="small">
-            <tr>
-                <th></th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price <sup>(Per Unit)</sup></th>
-                <th>Total Price</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="small">
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price <sup>(Per Unit)</sup></th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
 
 
-            @foreach($cartItems as $cartItem)
+                @foreach($cartItems as $cartItem)
 
-            <tr>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <img src="{{ asset('storage/'. $cartItem->image_url) }}" alt="{{ $cartItem->name }}"
-                            class="rounded me-3" style="width: 5rem;">
-                    </div>
-                </td>
-                <td>{{ $cartItem->name }}</td>
-                <td>{{ $cartItem->quantity }}</td>
-                <td>${{ $cartItem->price }}</td>
-                <td>${{ $cartItem->price * $cartItem->quantity }}</td>
-                <td>
-                    <form action="{{ route('cart.update', ['cart' => $cartItem->id]) }}" method="post">
-                        @csrf
-                        @method('PUT') 
-                       <button type="submit" class="btn btn-primary">&times;</button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <td style="width: 7rem;">
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('storage/'. $cartItem->image_url) }}" alt="{{ $cartItem->name }}"
+                                class="rounded w-100" style="min-width: 5rem;">
+                        </div>
+                    </td>
+                    <td>{{ $cartItem->name }}</td>
+                    <td>{{ $cartItem->quantity }}</td>
+                    <td>${{ $cartItem->price }}</td>
+                    <td>${{ $cartItem->price * $cartItem->quantity }}</td>
+                    <td>
+                        <form action="{{ route('cart.update', ['cart' => $cartItem->id]) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-primary">&times;</button>
+                        </form>
+                    </td>
+                </tr>
 
-            @endforeach
+                @endforeach
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
-     <!-- cart totals -->
-     <div class="row justify-content-end">
+    <!-- cart totals -->
+    <div class="row justify-content-end">
         <div class="col-md-6">
             <table class="table border">
                 <thead>
@@ -92,7 +94,7 @@
     </div>
 
     <div class="d-flex justify-content-end mb-4">
-       
+
         @auth
         <a href="{{ route('checkout.create') }}" class="btn btn-primary px-3 py-2">Checkout</a>
         @endauth
@@ -111,10 +113,10 @@
     @else
 
     <p class="text-muted">
-        Cart is empty <a href="{{ route('products.index') }}">Back to Shop</a> 
+        Cart is empty <a href="{{ route('products.index') }}">Back to Shop</a>
     </p>
-   
-    
+
+
     @endif
 
-@endsection
+    @endsection
