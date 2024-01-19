@@ -26,7 +26,7 @@
 
             <p class="text-muted mb-2">{{ $product->category }}</p>
 
-            <p>{{ $product->description }}</p>
+            <p>{{ $product->short_description }}</p>
 
             <p>
                 @if($product['on_sale'] == true)
@@ -54,7 +54,7 @@
 
     <h5>Description</h5>
     <hr>
-    <p>{{ $product->description }}</p>
+    <p>{{ $product->long_description }}</p>
 </div>
 
 
