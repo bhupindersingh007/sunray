@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="last_name" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" last_name="last_name" value="{{ old('last_name') }}">
+                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name') }}">
                         @error('last_name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror    
