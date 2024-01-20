@@ -1,6 +1,14 @@
 <header class="sticky-top bg-white shadow-sm">
     <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid">
+
+            <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+
             <a class="navbar-brand p-0 d-flex align-items-center" href="/">
 
                 <img src="{{ asset('images/logo.png') }}" alt="Sun Ray" style="width:38px">
@@ -11,11 +19,13 @@
 
 
             </a>
-            <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
+            <div class="d-flex align-items-center d-lg-none">
+
+                @include('partials.menubar')
+                
+            </div>
+
             <div class="collapse navbar-collapse" id="navbar-primary">
                 <ul class="navbar-nav ms-lg-auto text-center">
 
@@ -38,7 +48,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item me-lg-3">
+                    <li class="nav-item me-lg-2">
                         <a href="{{ route('products.index') }}" class="mt-3 mt-lg-1 d-inline-block text-muted">
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
                             class="text-brown"
@@ -50,7 +60,7 @@
                     </li>
 
 
-                    <li class="nav-item dropdown me-lg-3">
+                    <li class="nav-item dropdown me-lg-2">
                         <a class="nav-link dropdown-toggle pt-1" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -86,7 +96,7 @@
 
                             <span
                                 class="position-absolute start-100 translate-middle badge rounded-pill bg-brown text-white fw-semibold"
-                                style="top: 2px;">
+                                style="top: 4px;">
                                 
                                 {{ (new App\Services\CartService())->getCartItemsCount() }}
 
