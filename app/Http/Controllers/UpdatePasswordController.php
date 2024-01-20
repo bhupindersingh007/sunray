@@ -35,7 +35,7 @@ class UpdatePasswordController extends Controller
 
         $request->session()->passwordConfirmed();
 
-        return redirect()->route('update.password.create');
+        return redirect()->route('update.password.create')->with('success', 'Password Updated.');
 
     }
 

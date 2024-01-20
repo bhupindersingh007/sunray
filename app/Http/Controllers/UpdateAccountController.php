@@ -36,7 +36,7 @@ class UpdateAccountController extends Controller
            'email' => $request->email
         ]);
 
-        return redirect()->route('update.account.create');
+        return redirect()->route('update.account.create')->with('success', 'Account Updated.');
 
 
     }
