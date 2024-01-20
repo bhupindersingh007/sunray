@@ -14,13 +14,23 @@
 
                 @csrf
 
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
-                    @error('name')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name') }}">
+                        @error('first_name')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror    
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" last_name="last_name" value="{{ old('last_name') }}">
+                        @error('last_name')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror    
+                    </div>
                 </div>
+
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email Address</label>
