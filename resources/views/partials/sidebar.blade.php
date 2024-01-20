@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group mb-4">
     <li class="list-group-item py-3">
         <a href="{{ route('account.show') }}">My Account</a>
     </li>
