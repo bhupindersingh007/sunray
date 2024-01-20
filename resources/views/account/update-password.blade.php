@@ -14,7 +14,7 @@
         <div class="col-lg-9">
             <h4 class="mb-3">Update Password</h4>
 
-            <form action="{{ route('register.store') }}" method="POST" class="col-lg-7 rounded p-3 border">
+            <form action="{{ route('update.password.store') }}" method="POST" class="col-lg-7 rounded p-3 border">
 
                 @csrf
 
@@ -35,8 +35,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Confirm New Password</label>
-                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                    <label for="new_password_confirmation" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation">
                     @error('password_confirmation')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
