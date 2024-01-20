@@ -9,10 +9,10 @@
 <section class="container mb-4">
 
     <header class="row align-items-center mb-4">
-        <div class="col-6">
+        <div class="col-8">
             <h4 class="mb-0">Featured Products</h4>
         </div>
-        <div class="col-6 d-flex justify-content-end">
+        <div class="col-4 d-flex justify-content-end">
             <a href="{{ route('products.index') }}?type=featured" class="text-muted small">See More</a>
         </div>
     </header>
@@ -46,10 +46,10 @@
 <section class="container">
 
     <header class="row align-items-center mb-4">
-        <div class="col-6">
+        <div class="col-8">
             <h4 class="mb-0">Special Offers</h4>
         </div>
-        <div class="col-6 d-flex justify-content-end">
+        <div class="col-4 d-flex justify-content-end">
             <a href="{{ route('products.index') }}?type=sale" class="text-muted small">See More</a>
         </div>
     </header>

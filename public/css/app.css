@@ -11,7 +11,9 @@
     background: linear-gradient(42deg, rgba(0, 0, 0, 0.7), rgb(0 0 0 / 28%)), url('/images/home-banner.jpg') center/cover no-repeat;
     background-position: center;
     text-align: center;
-    padding: 140px 0;
+    display: flex;
+    align-items: center;
+    height: 64vh;
 }
 
 
