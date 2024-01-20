@@ -6,6 +6,9 @@
         <a href="{{ route('orders.index') }}">My Orders</a>
     </li>
     <li class="list-group-item py-3">
-        <a href="#">Update Account</a>
+        <a href="{{ route('update.account.create') }}">Update Account</a>
+    </li>
+    <li class="list-group-item py-3">
+        <a href="{{ route('update.password.create') }}">Update Password</a>
     </li>
 </ul>

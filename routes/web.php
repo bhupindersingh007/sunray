@@ -10,6 +10,8 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UpdateAccountController;
+use App\Http\Controllers\UpdatePasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\IsCartEmpty;
 
@@ -48,4 +50,10 @@ Route::get('confirmation', ConfirmationController::class)->name('confirmation')-
 Route::get('account', AccountController::class)->name('account.show')->middleware('auth');
 
 Route::get('orders', OrderController::class)->name('orders.index')->middleware('auth');
+
+Route::get('update-account', [UpdateAccountController::class, 'create'])->name('update.account.create');
+Route::post('update-account', [UpdateAccountController::class, 'store'])->name('update.account.store');
+
+Route::get('update-password', [UpdatePasswordController::class, 'create'])->name('update.password.create');
+Route::post('update-password', [UpdatePasswordController::class, 'store'])->name('update.password.store');
 
