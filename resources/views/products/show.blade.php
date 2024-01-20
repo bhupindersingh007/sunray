@@ -41,7 +41,12 @@
                 @csrf
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" name="quantity" value="1" min="1" required>
+                    <select class="form-select" name="quantity" required>
+                       <option value="" disabled>Choose...</option>
+                       @foreach (range(1, 5) as $item)
+                           <option value="{{ $item }}">{{ $item }}</option>
+                       @endforeach
+                    </select>
                 </div>
 
                 <input type="hidden" name="product_slug" value="{{ $product->slug }}">
