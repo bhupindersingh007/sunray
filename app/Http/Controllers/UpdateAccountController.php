@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UpdateAccountController extends Controller
 {
@@ -26,10 +27,17 @@ class UpdateAccountController extends Controller
         $request->validate([
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50',
-            'email' => 'required|email|unique:users,email|max:50',
+            'email' => 'required|email|max:50|' . Rule::unique('users', 'email')->ignore(auth()->user()),
         ]);
 
-        // validation todo : ignore current user email when considering unique email
+        auth()->user()->update([
+           'first_name' => $request->first_name,
+           'last_name' => $request->last_name,
+           'email' => $request->email
+        ]);
+
+        return redirect()->route('update.account.create');
+
 
     }
 
