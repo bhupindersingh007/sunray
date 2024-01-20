@@ -45,9 +45,6 @@ class Order extends Model
         $order = Order::create([
             'order_number' => Order::orderNumber(),
             'user_id' => auth()->id(),
-            'first_name' => $data->first_name,
-            'last_name' => $data->last_name,
-            'email' => $data->email,
             'phone_number' => $data->phone_number,
             'address' => $data->address,
             'postal' => $data->postal,

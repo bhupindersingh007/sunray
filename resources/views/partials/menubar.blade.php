@@ -25,7 +25,7 @@
     <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
         
         @auth
-            <li><a class="dropdown-item small" href="{{ route('account.show') }}">{{ auth()->user()->name }}</a></li>
+            <li><a class="dropdown-item small" href="{{ route('account.show') }}">{{ auth()->user()->first_name }}</a></li>
             <li>
                 <form class="dropdown-item small" action="{{ route('logout') }}" method="POST">
                 @csrf

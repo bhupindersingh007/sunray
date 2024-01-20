@@ -49,8 +49,6 @@ class CheckoutController extends Controller
             'expiry_date' => [' required', 'size:5', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],
             'cvv' => 'required|digits:3',
         ]);
-
-        if(explode('/', $request->expiry_date)[0])
         
         
         DB::transaction(function() use($request){

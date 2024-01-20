@@ -19,14 +19,14 @@
                 <div class="form-group row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label" for="first_name" class="text-black">First Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name') }}">
+                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ auth()->user()->first_name  }}" readonly>
                         @error('first_name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label" for="last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name') }}">
+                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ auth()->user()->last_name }}" readonly>
                         @error('last_name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -36,7 +36,7 @@
                 <div class="form-group row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label" for="email" class="text-black">Email Address <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email', auth()->user()->email) }}">
+                        <input type="text" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                         @error('email')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
