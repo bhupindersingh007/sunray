@@ -15,7 +15,7 @@
 
             <h4 class="mb-3">Update Account</h4>
 
-            <form action="{{ route('update.account.store') }}" method="POST" class="col-lg-7 rounded p-3 border">
+            <form action="{{ route('update.account.store') }}" method="POST" class="col-lg-7 rounded p-3 border" onsubmit="return confirm('Are you sure?');">
 
                 @csrf
 

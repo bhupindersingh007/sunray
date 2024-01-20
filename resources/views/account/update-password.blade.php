@@ -14,7 +14,7 @@
         <div class="col-lg-9">
             <h4 class="mb-3">Update Password</h4>
 
-            <form action="{{ route('update.password.store') }}" method="POST" class="col-lg-7 rounded p-3 border">
+            <form action="{{ route('update.password.store') }}" method="POST" class="col-lg-7 rounded p-3 border" onsubmit="return confirm('Are you sure?');">
 
                 @csrf
 
