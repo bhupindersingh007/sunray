@@ -13,6 +13,39 @@
 
         <div class="col-lg-9">
             <h4 class="mb-3">Update Password</h4>
+
+            <form action="{{ route('register.store') }}" method="POST" class="col-lg-7 rounded p-3 border">
+
+                @csrf
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="current_password" name="current_password" value="{{ old('current_password') }}">
+                    @error('current_password')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="new_password" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password" value="{{ old('new_password') }}">
+                    @error('new_password')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="password_confirmation" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                    @error('password_confirmation')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Update</button>
+
+            </form>
+
             
         </div>
     </div>
