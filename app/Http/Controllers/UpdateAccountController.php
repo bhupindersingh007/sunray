@@ -23,6 +23,14 @@ class UpdateAccountController extends Controller
     public function store(Request $request)
     {
         
+        $request->validate([
+            'first_name' => 'required|max:50',
+            'last_name' => 'required|max:50',
+            'email' => 'required|email|unique:users,email|max:50',
+        ]);
+
+        // validation todo : ignore current user email when considering unique email
+
     }
 
     
