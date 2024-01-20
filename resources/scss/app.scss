@@ -1,0 +1,43 @@
+$brown: hsl(35.64deg 60.18% 56.67%);
+$brown-dark: hsl(35.64deg 60.18% 50.67%);
+
+$font-family-sans-serif: 'Jost', 'sans-serif';
+$primary: $brown;
+$input-focus-box-shadow: none;
+$btn-hover-bg-shade-amount:       50%;
+$btn-hover-bg-tint-amount:        2%;
+
+@import "~bootstrap/scss/bootstrap";
+
+
+.banner {
+    background-position: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 64vh;
+}
+
+.btn{
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: $white;
+}
+
+
+.text-brown{
+    color: $brown-dark;
+}
+
+.bg-brown{
+    background-color: $brown-dark;
+}
+
+
+.sale-badge {
+    width: 2.6rem; 
+    height: 2.6rem;
+    margin-top: -6px;
+    margin-right: -8px;
+    background-color: $primary !important;
+}

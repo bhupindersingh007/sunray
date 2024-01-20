@@ -1,4 +1,6 @@
-<section class="banner mb-5">
+<section class="banner mb-5" 
+style="background: linear-gradient(42deg, rgba(0, 0, 0, 0.7), rgb(0 0 0 / 28%)), url('images/home-banner.jpg') center/cover no-repeat;
+">
     <div class="container text-white">
         <div class="d-lg-none">
             <h1 class="mb-2 display-1 text-uppercase">Welcome to SUNRAY</h1>
