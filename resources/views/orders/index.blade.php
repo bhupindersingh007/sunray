@@ -23,7 +23,6 @@
                         <tr>
                             <th>Order No.</th>
                             <th>Order Date</th>
-                            <th>Buyer Name</th>
                             <th>Address</th>
                             <th>Total</th>
                             <th></th>
@@ -36,13 +35,12 @@
                         <tr>
                             <td>{{ $order->order_number }}</td>
                             <td>{{ $order->created_at->format('D j, Y') }}</td>
-                            <td>{{ $order->first_name . ' ' . $order->last_name }}</td>
                             <td>{{ $order->address . ', ' . $order->postal  }}</td>
                             <td>${{ $order->total }}</td>
                             <td>
                                 <button class="btn btn-sm btn-primary" 
                                 type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#order-{{ $order->id }}">
-                                Products
+                                View More
                                </button>
 
                                @include('partials.modal')
