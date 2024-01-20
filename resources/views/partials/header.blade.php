@@ -5,18 +5,21 @@
             <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" 
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
             </button>
                 
 
-            <a class="navbar-brand p-0 d-flex align-items-center" href="/">
+            <a class="navbar-brand p-0 d-flex align-items-center ms-4 ms-lg-0" href="{{ route('home') }}">
 
                 <img src="{{ asset('images/logo.png') }}" alt="Sun Ray" style="width:38px">
 
                 <span class="fw-bold fs-4 ms-2" style="letter-spacing: 0.10rem;">
                     <span class="text-brown">SUN</span>RAY
                 </span>
-
 
             </a>
             
@@ -42,13 +45,13 @@
                             aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu border-0 shadow-sm">
+                        <ul class="dropdown-menu border-0 shadow-sm text-center">
                             <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=eyeglasses">Eye Glasses</a></li>
                             <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=sunglasses">Sun Glasses</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item me-lg-2">
+                    <li class="nav-item me-lg-2 d-none d-lg-inline-block">
                         <a href="{{ route('products.index') }}" class="mt-3 mt-lg-1 d-inline-block text-muted">
                             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
                             class="text-brown"
@@ -60,7 +63,7 @@
                     </li>
 
 
-                    <li class="nav-item dropdown me-lg-2">
+                    <li class="nav-item dropdown me-lg-2 d-none d-lg-inline-block">
                         <a class="nav-link dropdown-toggle pt-1" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -91,7 +94,7 @@
                     </li>
 
 
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-lg-inline-block">
                         <a href="{{ route('cart.index') }}" class="mt-3 mt-lg-1 d-inline-block text-muted position-relative">
 
                             <span
