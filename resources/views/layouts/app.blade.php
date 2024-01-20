@@ -7,14 +7,16 @@
 
     <title>{{ config('app.name') }}</title>
 
-    <!-- Bootstrap -->
+    {{-- Bootstrap --}}
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
 
-    <!-- Fonts -->
+    {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/png">
 
 </head>
 
