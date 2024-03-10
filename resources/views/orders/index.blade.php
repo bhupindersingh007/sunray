@@ -34,7 +34,7 @@
                          
                         <tr>
                             <td>{{ $order->order_number }}</td>
-                            <td>{{ $order->created_at->format('D j, Y') }}</td>
+                            <td>{{ $order->created_at->format('d M, Y') }}</td>
                             <td>{{ $order->address . ', ' . $order->postal  }}</td>
                             <td>${{ $order->total }}</td>
                             <td>
