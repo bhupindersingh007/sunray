@@ -10,7 +10,9 @@
             <h4 class="mb-0">All Products</h4>
         </div>
         <div class="col-6 d-flex justify-content-end">
-            <a href="{{ route('products.index') }}" class="text-muted small">Reset Filters</a>
+            @if (request()->has('search'))
+            <a href="{{ route('products.index') }}" class="text-muted small">&times; Reset Filters</a>
+            @endif
         </div>
     </header>
 
