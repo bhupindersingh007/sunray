@@ -49,8 +49,14 @@ class CartController extends Controller
     public function store(Request $request)
     {
 
-        $product = Product::where('slug', $request->product_slug)->FirstOrFail();
+        $request->validate([
+            'product_slug' => 'required|exists:products,slug',
+            'quantity' => 'nullable|numeric|min:1|max:5',
+        ]);
+
         $quantity = $request->quantity ?? 1;
+
+        $product = Product::where('slug', $request->product_slug)->FirstOrFail();
 
         $this->cartService->addCartItem($product, $quantity);
 

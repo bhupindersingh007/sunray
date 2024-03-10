@@ -50,9 +50,15 @@
                            <option value="{{ $item }}">{{ $item }}</option>
                        @endforeach
                     </select>
+
+                    @error('quantity')
+                    <small class="text-danger d-block mt-1">{{ $message }}</small>
+                    @enderror
+
                 </div>
 
                 <input type="hidden" name="product_slug" value="{{ $product->slug }}">
+
 
                 <button class="d-flex align-items-center btn btn-primary py-2 mb-5">
 
