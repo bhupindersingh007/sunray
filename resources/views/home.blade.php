@@ -77,9 +77,7 @@
 
 </section>
 
-
-
-
+@include('partials.sale')
 
 
 @endsection
