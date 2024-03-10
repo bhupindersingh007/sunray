@@ -30,7 +30,7 @@
 
             <p>
                 @if($product['on_sale'] == true)
-                <del class="small">${{ number_format($product->price + $product->price * 0.25, 2) }}</del>
+                <del class="text-danger">${{ number_format($product->price + $product->price * 0.25, 2) }}</del>
                 @endif
 
                 <span class="fw-bold fs-5">${{ $product->price }}</span>
