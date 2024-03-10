@@ -25,9 +25,9 @@
     <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
         
         @auth
-            <li><a class="dropdown-item small" href="{{ route('account.show') }}">{{ auth()->user()->first_name }}</a></li>
+            <li><a class="dropdown-item" href="{{ route('account.show') }}">{{ auth()->user()->first_name }}</a></li>
             <li>
-                <form class="dropdown-item small" action="{{ route('logout') }}" method="POST">
+                <form class="dropdown-item" action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="dropdown-item p-0">Logout</button>
             </form>
@@ -35,8 +35,8 @@
         @endauth
 
         @guest
-            <li><a class="dropdown-item small" href="{{ route('register.create') }}">Regsiter</a></li>
-            <li><a class="dropdown-item small" href="{{ route('login.create') }}">Login</a></li>
+            <li><a class="dropdown-item" href="{{ route('register.create') }}">Regsiter</a></li>
+            <li><a class="dropdown-item" href="{{ route('login.create') }}">Login</a></li>
         @endguest
     </ul>
 </div>

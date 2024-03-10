@@ -45,9 +45,9 @@
                             aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu border-0 shadow-sm text-center text-lg-start">
-                            <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=eyeglasses">Eye Glasses</a></li>
-                            <li><a class="dropdown-item small" href="{{ route('products.index') }}?category=sunglasses">Sun Glasses</a></li>
+                        <ul class="dropdown-menu border-0 text-center text-lg-start">
+                            <li><a class="dropdown-item" href="{{ route('products.index') }}?category=eyeglasses">Eye Glasses</a></li>
+                            <li><a class="dropdown-item" href="{{ route('products.index') }}?category=sunglasses">Sun Glasses</a></li>
                         </ul>
                     </li>
 
@@ -77,10 +77,10 @@
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                             
                             @auth
-                                <li><a class="dropdown-item small" href="#">{{ Str::limit(auth()->user()->fullName, 25) }}</a></li>
-                                <li><a class="dropdown-item small" href="{{ route('account.show') }}">My Account</a></li>
+                                <li><a class="dropdown-item" href="#">{{ Str::limit(auth()->user()->fullName, 25) }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('account.show') }}">My Account</a></li>
                                 <li>
-                                    <form class="dropdown-item small" action="{{ route('logout') }}" method="POST">
+                                    <form class="dropdown-item" action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="dropdown-item p-0">Logout</button>
                                 </form>
@@ -88,8 +88,8 @@
                             @endauth
 
                             @guest
-                                <li><a class="dropdown-item small" href="{{ route('register.create') }}">Regsiter</a></li>
-                                <li><a class="dropdown-item small" href="{{ route('login.create') }}">Login</a></li>
+                                <li><a class="dropdown-item" href="{{ route('register.create') }}">Regsiter</a></li>
+                                <li><a class="dropdown-item" href="{{ route('login.create') }}">Login</a></li>
                             @endguest
                         </ul>
                     </li>
