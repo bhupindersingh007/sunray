@@ -40,20 +40,32 @@ Route::post('register', [RegisterController::class, 'store'])->name('register.st
 Route::get('login', [LoginController::class, 'create'])->name('login.create');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
 
-Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout')->middleware('auth');
 
-Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('auth', IsCartEmpty::class);
-Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('auth', IsCartEmpty::class);
+Route::middleware('auth')->group(function() {
 
-Route::get('confirmation', ConfirmationController::class)->name('confirmation')->middleware('auth', IsCartEmpty::class);
+    Route::match(['get', 'post'], 'logout', LogoutController::class)->name('logout');
 
-Route::get('account', AccountController::class)->name('account.show')->middleware('auth');
+    Route::get('account', AccountController::class)->name('account.show');
 
-Route::get('orders', OrderController::class)->name('orders.index')->middleware('auth');
+    Route::get('orders', OrderController::class)->name('orders.index');
 
-Route::get('update-account', [UpdateAccountController::class, 'create'])->name('update.account.create');
-Route::post('update-account', [UpdateAccountController::class, 'store'])->name('update.account.store');
+    Route::get('update-account', [UpdateAccountController::class, 'create'])->name('update.account.create');
+    Route::post('update-account', [UpdateAccountController::class, 'store'])->name('update.account.store');
 
-Route::get('update-password', [UpdatePasswordController::class, 'create'])->name('update.password.create');
-Route::post('update-password', [UpdatePasswordController::class, 'store'])->name('update.password.store');
+    Route::get('update-password', [UpdatePasswordController::class, 'create'])->name('update.password.create');
+    Route::post('update-password', [UpdatePasswordController::class, 'store'])->name('update.password.store');
+
+
+});
+
+
+Route::middleware('auth', IsCartEmpty::class)->group(function() {
+    
+    Route::get('checkout', [CheckoutController::class, 'create'])->name('checkout.create');
+    Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
+    Route::get('confirmation', ConfirmationController::class)->name('confirmation');
+
+});
+
 
