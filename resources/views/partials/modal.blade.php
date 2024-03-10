@@ -39,14 +39,30 @@
 
                         @endforeach
 
+
                     </tbody>
+
+
+                    <tfoot class="fw-bold">
+                       <tr>
+                        <td colspan="3"></td>
+                        <td>Sub Total</td>
+                        <td>${{ $order->subtotal }}</td>
+                       </tr>
+                       <tr>
+                        <td colspan="3"></td>
+                        <td>Tax (5%)</td>
+                        <td>${{ $order->subtotal + $order->tax  }}</td>
+                       </tr>
+                       <tr>
+                        <td colspan="3"></td>
+                        <td>Total</td>
+                        <td>${{ $order->total }}</td>
+                       </tr>
+                    </tfoot>
+
                 </table>
             </div>
-
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
