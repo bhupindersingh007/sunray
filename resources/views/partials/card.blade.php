@@ -35,7 +35,20 @@
         <form action="{{ route('cart.store') }}" method="POST">
             @csrf
             <input type="hidden" name="product_slug" value="{{ $product->slug }}">
-            <button type="submit" class="btn btn-primary w-100 py-2">Add to Cart</button>
+
+            <button class="d-flex align-items-center justify-content-center btn btn-primary w-100 py-2">
+
+                <svg class="me-2" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6">
+                    </line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+
+                Add to Cart
+
+            </button>
         </form>
     </div>
 </article>

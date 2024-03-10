@@ -1,6 +1,6 @@
 <header class="sticky-top bg-white shadow-sm">
     <nav class="navbar navbar-expand-lg container">
-        <div class="container-fluid">
+        <div class="container-fluid px-3 px-md-2">
 
             <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false"

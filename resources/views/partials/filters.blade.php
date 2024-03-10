@@ -2,7 +2,7 @@
     <form class="d-flex mb-3" role="search" action="{{ route('products.index') }}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
             name="search" value="{{ request('search') }}">
-        <button class="btn btn-primary" type="submit">
+        <button class="d-flex align-items-center btn btn-primary" type="submit">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -76,8 +76,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-4">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+        <button type="submit" class="d-flex align-items-center btn btn-primary mb-4">
+            <svg class="me-1" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
             </svg> Apply Filters

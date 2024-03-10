@@ -5,18 +5,21 @@
 <div class="container mt-5">
     <div class="row">
 
-        <div class="col-md-6 position-relative">
+        <div class="col-md-6">
 
-            <img src="{{ asset('storage/'. $product->image_url) }}" class="img-fluid rounded mb-4 mb-lg-5"
-                alt="{{ $product->name }}">
+            <div class="position-relative">
 
-            @if($product->on_sale == true)
+                <img src="{{ asset('storage/'. $product->image_url) }}" class="img-fluid rounded mb-4 mb-lg-5"
+                    alt="{{ $product->name }}">
 
-            <span class="sale-badge position-absolute top-0 end-0 badge 
-                rounded-pill fw-semibold py-2 rounded-circle 
-                d-flex justify-content-center align-items-center">SALE</span>
+                @if($product->on_sale == true)
 
-            @endif
+                <span class="sale-badge position-absolute top-0 end-0 badge 
+                    rounded-pill fw-semibold py-2 rounded-circle 
+                    d-flex justify-content-center align-items-center">SALE</span>
+
+                @endif
+           </div>
 
         </div>
 
@@ -51,7 +54,19 @@
 
                 <input type="hidden" name="product_slug" value="{{ $product->slug }}">
 
-                <button class="btn btn-primary py-2 mb-5">Add to Cart</button>
+                <button class="d-flex align-items-center btn btn-primary py-2 mb-5">
+
+                    <svg class="me-2" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6">
+                        </line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+
+                    Add to Cart
+
+                </button>
             </form>
 
         </div>
