@@ -1,7 +1,7 @@
 {{-- menubar for small and medium screens --}}
 
 {{-- search --}}
-<a href="{{ route('products.index') }}" class="d-inline-block me-1">
+<a href="{{ route('products.index') }}" class="d-inline-block me-2">
     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
     class="text-brown"
         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -11,7 +11,7 @@
 </a>
 
 {{-- user dropdown --}}
-<div class="dropdown d-inline-block me-1">
+<div class="dropdown d-inline-block me-2">
     <a class="btn p-0" href="#" role="button" data-bs-toggle="dropdown"
         aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -42,7 +42,7 @@
 </div>
 
 {{-- cart --}}
-<a href="{{ route('cart.index') }}" class="d-inline-block text-muted position-relative me-1">
+<a href="{{ route('cart.index') }}" class="d-inline-block text-muted position-relative me-2">
 
     <span
         class="position-absolute start-100 translate-middle badge rounded-pill bg-brown text-white fw-semibold"

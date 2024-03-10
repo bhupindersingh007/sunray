@@ -22,7 +22,7 @@
     @if(isset($cartItems) && count($cartItems) > 0)
 
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered" style="min-width: 30rem;">
             <thead class="small">
                 <tr>
                     <th></th>
