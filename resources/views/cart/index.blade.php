@@ -13,7 +13,7 @@
             <form action="{{ route('cart.destroy', ['cart' => 'empty']) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="small btn btn-sm text-danger">Empty Cart</a>
+                <button type="submit" class="text-muted small btn btn-sm">Empty Cart</a>
             </form>
             @endif
         </div>
