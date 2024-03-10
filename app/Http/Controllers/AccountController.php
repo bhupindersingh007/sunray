@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+use App\Models\Order;
 
 class AccountController extends Controller
 {
@@ -13,7 +13,9 @@ class AccountController extends Controller
     public function __invoke(Request $request) 
     {
      
-        return view('account.show');
+        $orders_count = Order::where('user_id', auth()->id())->count();
+
+        return view('account.show', compact('orders_count'));
 
     }
 }
