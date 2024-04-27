@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Order Confirmation')
+
 @section('content')
 
 <div class="container col-lg-6 mt-5">
