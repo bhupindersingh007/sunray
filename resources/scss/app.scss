@@ -55,3 +55,9 @@ $btn-hover-bg-tint-amount:        2%;
 .hover\:not-allowed:hover{
     cursor: not-allowed;
 }
+
+@media only screen and (min-width: 768px){
+    .md\:shadow-sm{
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    }
+}

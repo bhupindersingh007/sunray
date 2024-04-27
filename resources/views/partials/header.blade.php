@@ -45,7 +45,7 @@
                             aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu border-0 text-center text-lg-start">
+                        <ul class="dropdown-menu border-0 text-center text-lg-start md:shadow-sm">
                             <li><a class="dropdown-item" href="{{ route('products.index') }}?category=eyeglasses">Eye Glasses</a></li>
                             <li><a class="dropdown-item" href="{{ route('products.index') }}?category=sunglasses">Sun Glasses</a></li>
                         </ul>
