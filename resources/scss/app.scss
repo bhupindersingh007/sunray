@@ -51,3 +51,7 @@ $btn-hover-bg-tint-amount:        2%;
 .card img:hover {
     transform: scale(1.04);
 }
+
+.hover\:not-allowed:hover{
+    cursor: not-allowed;
+}
