@@ -19,6 +19,13 @@ class Order extends Model
      */
     protected $guarded = [];
 
+    // order status
+
+    const PENDING = 'pending';
+    const PROCESSING = 'processing';
+    const SHIPPED = 'shipped';
+    const CANCELLED = 'cancelled';
+
 
     /**
      * Get the items for the order.
@@ -54,6 +61,7 @@ class Order extends Model
         $order = Order::create([
             'order_number' => Order::orderNumber(),
             'user_id' => auth()->id(),
+            'status' => Order::PENDING,
             'phone_number' => $data->phone_number,
             'address' => $data->address,
             'postal' => $data->postal,

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('order_number')->unique();
             $table->foreignId('user_id');
+            $table->string('status', 30);
             $table->string('phone_number');
             $table->string('address');
             $table->string('postal');
