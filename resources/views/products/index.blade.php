@@ -33,17 +33,19 @@
 
                     @endforeach
                     
+                            
+                    <div class="text-end">
+                        {{ $products->links() }}
+                    </div>
+
                 @else
                 
-                    <p class="text-muted">No Featured Products Found</p>
+                    <p class="text-muted">No Products Found.</p>
                     
                 @endif
 
             </div>
 
-            <div class="text-end">
-                {{ $products->links() }}
-            </div>
 
         </div>
 
