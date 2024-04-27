@@ -36,11 +36,13 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+
+        
         $request->validate([
             'first_name' => 'required|string|max:100',
             'last_name' => 'required|string|max:100',
             'email' => 'required|email|max:100',
-            'phone_number' => 'required|string|max:10',
+            'phone_number' => 'required|string|digits:10',
             'address' => 'required|string|max:150',
             'postal' => 'required|size:6',
             'order_notes' => 'nullable|string|max:150',
@@ -48,7 +50,11 @@ class CheckoutController extends Controller
             'expiry_date' => [' required', 'size:5', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],
             'cvv' => 'required|digits:3',
         ]);
-        
+
+        if(explode('/', $request->expiry_date)[1] < date('y')){
+         
+            return back()->withErrors(['expiry_date' => 'The expiry date field is invalid.'])->withInput();
+        }
         
         DB::transaction(function() use($request){
     
