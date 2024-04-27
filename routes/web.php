@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function() {
 
     Route::get('update-account', [UpdateAccountController::class, 'create'])->name('update.account.create');
     Route::post('update-account', [UpdateAccountController::class, 'store'])->name('update.account.store');
+    Route::delete('update-account', [UpdateAccountController::class, 'destroy'])->name('update.account.destroy');
 
     Route::get('update-password', [UpdatePasswordController::class, 'create'])->name('update.password.create');
     Route::post('update-password', [UpdatePasswordController::class, 'store'])->name('update.password.store');

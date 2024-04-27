@@ -41,5 +41,25 @@ class UpdateAccountController extends Controller
 
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Request $request)
+    {
+
+        auth()->user()->orders()->delete();
+        
+        auth()->user()->delete();
+
+        auth()->logout();
+ 
+        $request->session()->invalidate();
+     
+        $request->session()->regenerateToken();
+     
+        return redirect()->route('home')->with('success', 'Account Deleted.');
+
+    }
+
     
 }
