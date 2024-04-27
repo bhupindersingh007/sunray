@@ -23,7 +23,7 @@
             @if($orders->count() > 0)
 
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="min-width: 50rem;">
                     <thead class="small">
                         <tr>
                             <th>Order No.</th>
