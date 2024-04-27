@@ -55,7 +55,7 @@ class Order extends Model
     }
 
 
-    public static function createOrder($data, $subTotal, $tax, $cartItems): void
+    public static function createOrder($data, $subTotal, $tax, $cartItems): Order
     {
 
         $order = Order::create([
@@ -81,6 +81,8 @@ class Order extends Model
             ]);
 
         }
+
+        return $order;
 
     }
 

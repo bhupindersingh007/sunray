@@ -14,9 +14,9 @@
         </svg>
 
         <h1 class="display-5">Thank You!</h1>
-        <p class="lead">Your order has been successfully completed.</p>
+        <p class="lead">Your order <a href="{{ route('orders.index') }}" class="fw-bold">{{ $orderNumber }}</a> has been confirmed successfully.</p>
         <hr class="my-4">
-        <p class="mb-4 text-muted">You will receive your order within 3 to 4 bussiness days.</p>
+        <p class="mb-4 text-muted">Thanks for your order. We will let you know once your items have dispatched.</p>
 
         <a href="{{ route('products.index') }}" class="btn btn-primary py-2 px-3 mb-5">Back to Shop</a>
     </div>
