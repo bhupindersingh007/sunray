@@ -52,7 +52,7 @@
                        <tr>
                         <td colspan="3"></td>
                         <td>Tax (5%)</td>
-                        <td>${{ $order->subtotal + $order->tax  }}</td>
+                        <td>${{ $order->tax  }}</td>
                        </tr>
                        <tr>
                         <td colspan="3"></td>
