@@ -77,7 +77,7 @@
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                             
                             @auth
-                                <li><a class="dropdown-item" href="#">{{ Str::limit(auth()->user()->fullName, 25) }}</a></li>
+                                <li><a class="dropdown-item" href="#">{{ str()->limit(auth()->user()->fullName, 25) }}</a></li>
                                 <li><a class="dropdown-item" href="{{ route('account.show') }}">My Account</a></li>
                                 <li>
                                     <form class="dropdown-item" action="{{ route('logout') }}" method="POST">
