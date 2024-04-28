@@ -37,3 +37,4 @@
 - [MySQL 8.0](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/) - The world's most popular open source relational database.
 - [Feather Icons](https://feathericons.com) - Simply beautiful open source SVG icons.
 - [Vite Plugin](https://github.com/laravel/vite-plugin) - Laravel plugin for Vite.
+- [Bootstrap 5](https://github.com/twbs/bootstrap) - The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
