@@ -27,7 +27,7 @@
     @include('partials.alerts')
 
 
-    <main>
+    <main style="min-height: 76vh;">
         @yield('content')
     </main>
 
