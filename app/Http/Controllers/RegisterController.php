@@ -43,7 +43,9 @@ class RegisterController extends Controller
         auth()->login($user);
         
         $request->session()->regenerate();
-        return redirect()->intended();
+
+        $fullName = str()->limit($user->fullName, 25);
+        return redirect()->route('home')->with('success', "Welcome, $fullName");
 
     }
 

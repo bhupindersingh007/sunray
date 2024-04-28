@@ -32,7 +32,9 @@ class LoginController extends Controller
         if (auth()->attempt($credentials)) {
 
             $request->session()->regenerate();
-            return redirect()->intended();
+                
+            $fullName = str()->limit(auth()->user()->fullName, 25);
+            return redirect()->route('home')->with('success', "Welcome, $fullName");
         }
  
         return back()->withErrors([
