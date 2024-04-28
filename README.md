@@ -1,7 +1,16 @@
 ## Introduction
-**SUNRAY** - An ecommerce application built with PHP, Laravel, Vite, Bootstrap & MySQL.
+**SUNRAY** - An eyeglasses and sunglasses ecommerce application built with PHP, Laravel, Vite, Bootstrap, and MySQL.
 
 ## Features
+- **User Authentication:** Laravel built-in login, sign-up, and logout for user accounts.
+- **Product Search & Filters:** Easily find products with search and custom filters.
+- **Cart System:** Add, remove, and manage items in your cart easily.
+- **Checkout:** Easy way to pay for your items and provide your address for delivery.
+- **User Settings:** Update account info, password, or delete account.
+- **Orders History:** View past orders for tracking and reordering.
+- **Dashboard:** Manage orders, preferences, and account settings from one place.
+- **Responsive UI:** Browse and shop on any device with a mobile-friendly design.
+- **Flash Messages:** Quick notifications for important actions like successful login, item added to cart, or order confirmation.
 
 ## Showcase
 
