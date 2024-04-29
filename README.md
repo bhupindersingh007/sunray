@@ -23,7 +23,7 @@
 ![Register](https://github.com/bhupindersingh007/sunray/assets/63149405/1673d258-3d10-4e78-b1a7-050843356076)
 ![Login](https://github.com/bhupindersingh007/sunray/assets/63149405/fb9f1f6b-5715-4532-989e-ac966b597f8f)
 
-### Products Search, Filters & Details
+### Products Details, Search & Filters
 ![Products with Search & Filters](https://github.com/bhupindersingh007/sunray/assets/63149405/7d48694d-7686-487a-8ea4-5244f3cdf851)
 ![Product Details](https://github.com/bhupindersingh007/sunray/assets/63149405/8dd3536e-51ca-4d7b-9712-25f09f973dea)
 
@@ -31,7 +31,7 @@
 ![Cart](https://github.com/bhupindersingh007/sunray/assets/63149405/c029717c-fc8f-4c3e-b527-292e6cfa5680)
 
 ### Customer Dashboard  
-![My Account](https://github.com/bhupindersingh007/sunray/assets/63149405/e27a83ca-f0a2-4e2d-aba9-edfca4188513)
+![My Account](https://github.com/bhupindersingh007/sunray/assets/63149405/11d90d0f-a072-4c06-aa23-ee1361239901)
 
 ### Customer Orders History
 ![My Orders](https://github.com/bhupindersingh007/sunray/assets/63149405/835995f5-c968-4911-a148-98f117e6ac04)
