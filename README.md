@@ -15,6 +15,11 @@
 - **Responsive UI:** Browse and shop on any device with a mobile-friendly design.
 - **Flash Messages:** Quick notifications for important actions like successful login, item added to cart, or order confirmation.
 
+## Demo
+
+https://github.com/bhupindersingh007/sunray/assets/63149405/886c6865-05fc-4baa-a408-a6dea0752dd5
+
+
 ## Showcase
 
 ![Home](https://github.com/bhupindersingh007/sunray/assets/63149405/96753e27-93f8-490b-b20c-89ed4761cf9e)
