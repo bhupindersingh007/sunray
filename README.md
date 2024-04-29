@@ -19,19 +19,25 @@
 
 ![Home](https://github.com/bhupindersingh007/sunray/assets/63149405/96753e27-93f8-490b-b20c-89ed4761cf9e)
 
+### Register & Login
 ![Register](https://github.com/bhupindersingh007/sunray/assets/63149405/1673d258-3d10-4e78-b1a7-050843356076)
 ![Login](https://github.com/bhupindersingh007/sunray/assets/63149405/fb9f1f6b-5715-4532-989e-ac966b597f8f)
 
+### Products Search, Filters & Details
 ![Products with Search & Filters](https://github.com/bhupindersingh007/sunray/assets/63149405/7d48694d-7686-487a-8ea4-5244f3cdf851)
 ![Product Details](https://github.com/bhupindersingh007/sunray/assets/63149405/8dd3536e-51ca-4d7b-9712-25f09f973dea)
 
+### Shopping Cart
 ![Cart](https://github.com/bhupindersingh007/sunray/assets/63149405/c029717c-fc8f-4c3e-b527-292e6cfa5680)
 
+### Customer Dashboard  
 ![My Account](https://github.com/bhupindersingh007/sunray/assets/63149405/e27a83ca-f0a2-4e2d-aba9-edfca4188513)
 
+### Customer Orders History
 ![My Orders](https://github.com/bhupindersingh007/sunray/assets/63149405/835995f5-c968-4911-a148-98f117e6ac04)
 ![Order Detailed Information](https://github.com/bhupindersingh007/sunray/assets/63149405/475feb2f-b9fe-40f6-8675-36ba6290d245)
 
+### Update or Delete Account & Update Password 
 ![Update & Delete Account](https://github.com/bhupindersingh007/sunray/assets/63149405/505e48dd-d2e8-41d4-95ba-e260fa15474e)
 ![Update Password](https://github.com/bhupindersingh007/sunray/assets/63149405/726a5441-cccd-43c9-b87d-381e6089b568)
 
