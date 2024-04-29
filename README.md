@@ -1,5 +1,5 @@
 ## Introduction
-**SUNRAY** - An eyeglasses and sunglasses ecommerce application built with PHP, Laravel, Vite, Bootstrap, and MySQL.
+**SUNRAY** - An eyewear ecommerce application built with PHP, Laravel, Vite, Bootstrap, and MySQL.
 <br />
 <br />
 ![SUNRAY - Showcase](https://github.com/bhupindersingh007/sunray/assets/63149405/3d3c4ee6-c8ed-4792-808e-42f59174a0d4)
